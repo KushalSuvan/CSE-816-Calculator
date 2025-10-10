@@ -1,0 +1,14 @@
+- name: Deploy calculator container
+  hosts: localhost
+  tasks:
+    - name: Pull latest image
+      community.docker.docker_image:
+        name: kushaljenamani/calcapp
+        source: pull
+    - name: Run calculator container
+      community.docker.docker_container:
+        name: calc_app
+        image: kushaljenamani/calcapp:latest
+        state: started
+        interactive: true
+        tty: true

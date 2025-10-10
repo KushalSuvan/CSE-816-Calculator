@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Checkout') {
-            steps { git 'https://github.com/KushalSuvan/CSE-816-Calculator' }
+            steps { git branch: 'main', url: 'https://github.com/KushalSuvan/CSE-816-Calculator' }
         }
         stage('Test') {
             steps { sh 'python -m unittest discover -s tests' }
