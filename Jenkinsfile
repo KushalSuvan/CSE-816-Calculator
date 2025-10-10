@@ -30,7 +30,7 @@ pipeline {
 
         stage('Deploy via Ansible') {
             steps {
-                sh '~/ansible-venv/ansible-playbook ansible-playbook.yml'
+                sh '/home/kronos/ansible-venv/ansible-playbook ansible-playbook.yml'
             }
         }
     }
