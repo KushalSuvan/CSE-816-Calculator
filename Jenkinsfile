@@ -5,7 +5,7 @@ pipeline {
             steps { git branch: 'main', url: 'https://github.com/KushalSuvan/CSE-816-Calculator' }
         }
         stage('Test') {
-            steps { sh 'python -m unittest discover -s tests' }
+            steps { sh 'python3 -m unittest discover -s tests' }
         }
         stage('Build Docker') {
             steps { sh 'docker build -t kushaljenamani/calcapp:latest .' }
