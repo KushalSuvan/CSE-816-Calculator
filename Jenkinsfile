@@ -41,7 +41,7 @@ pipeline {
         
 	stage('Deploy via Ansible') {
             steps {
-                sh '. ~/ansible-venv/bin/activate && ansible-playbook ansible-playbook.yml'
+                sh '. venv/bin/activate && ansible-playbook ansible-playbook.yml'
             }
         }
     }
