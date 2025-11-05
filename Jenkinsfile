@@ -34,7 +34,7 @@ pipeline {
                     python3 -m venv venv
                     . venv/bin/activate
                     pip install --upgrade pip
-                    pip install ansible markupsafe
+                    pip install ansible markupsafe requests docker
                 '''
             }
         }
