@@ -27,8 +27,19 @@ pipeline {
                 }
             }
         }
-
-        stage('Deploy via Ansible') {
+	
+	stage('Setup Python Environment') {
+            steps {
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install ansible markupsafe
+                '''
+            }
+        }
+        
+	stage('Deploy via Ansible') {
             steps {
                 sh 'source ~/ansible-venv/bin/activate && ansible-playbook ansible-playbook.yml'
             }
